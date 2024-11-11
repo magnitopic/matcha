@@ -58,3 +58,6 @@ package-lock.json
 # Ignore custom frontend and backend build output if separated
 frontend/build/
 backend/build/
+
+# Ignore docker volumes:
+data
