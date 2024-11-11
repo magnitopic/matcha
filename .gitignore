@@ -1,0 +1,24 @@
+# MacOS files
+.DS_Store
+
+# VS Code files
+.vscode/
+
+# Docker files
+*.env
+
+# Ignore Docker Compose override files
+docker-compose*.override.yml
+
+# Ignore Docker log files
+docker-compose*.log
+
+# Ignore Docker db data
+/data/
+
+# Logs
+/src/logs
+
+# modules folder
+node_modules
+w
