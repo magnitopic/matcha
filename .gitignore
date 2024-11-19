@@ -50,6 +50,12 @@ package-lock.json
 # Ignore TypeScript build outputs
 *.tsbuildinfo
 
+# Logs
+/src/logs
+
+# modules folder
+node_modules
+
 # Ignore local project settings
 .project
 .settings/
