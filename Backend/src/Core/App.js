@@ -1,10 +1,10 @@
 import express, { json } from 'express';
+import { corsMiddleware } from '../Middlewares/Cors.js';
 import 'dotenv/config';
 
 // Routers:
 import AuthRouter from "../Routes/AuthRouter.js";
 import UsersRouter from "../Routes/UsersRouter.js";
-import { corsMiddleware } from '../Middlewares/Cors.js';
 
 export default class App {
     constructor() {

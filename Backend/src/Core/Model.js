@@ -60,12 +60,8 @@ export default class Model {
 
     async update({ input, id }) {
         const fields = Object.keys(input).map((key, index) => `${key} = $${index + 1}`).join(', ');
-        console.log('Fields: ', fields);
         const values = Object.values(input);
-        const placeholders = values.map((_, index) => `$${index + 1}`).join(", ");
         values.push(parseInt(id));
-        console.log('Values: ', values);
-        console.log('Placeholders: ', typeof(placeholders));
 
         const query = {
             text: `UPDATE ${this.table} SET ${fields} WHERE id = $${values.length} RETURNING *;`,
