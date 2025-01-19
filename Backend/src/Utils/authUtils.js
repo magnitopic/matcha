@@ -16,7 +16,6 @@ export async function checkAuthStatus(req) {
         }
         return { isAuthorized: false };
     } catch (error) {
-        console.error('ERROR: ', error);
         return { isAuthorized: false };
     }
 }
