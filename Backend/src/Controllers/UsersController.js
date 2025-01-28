@@ -436,7 +436,7 @@ export default class UsersController {
 
         try {
             await fsExtra.remove(image.image_path);
-            console.log(
+            console.info(
                 `Image with path '${image.image_path}' has been removed successfully!`
             );
             return res.json({ msg: StatusMessage.IMAGE_DELETED_SUCCESSFULLY });
