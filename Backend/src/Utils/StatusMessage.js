@@ -77,4 +77,11 @@ export default class StatusMessage {
     static USER_HAS_MAX_FAME = 'INFO: User has max fame!';
     static USER_CANNOT_LIKE =
         "Cannot like other users if you don't have a profile picture!";
+    static INVALID_USERNAME = 'Invalid username.';
+    static MATCH_DOES_NOT_EXIST =
+        'Cannot create an event with a user you are not matched with.';
+    static INVALID_EVENT_DATE =
+        'The selected date cannot be in the past. Please choose a valid future date.';
+    static EVENT_DELETION_SUCCESSFUL = 'Event deleted successfully!';
+    static EVENT_NOT_FOUND = 'The event you tried to delete does not exist.';
 }
