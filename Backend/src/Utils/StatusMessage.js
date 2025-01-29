@@ -84,4 +84,9 @@ export default class StatusMessage {
         'The selected date cannot be in the past. Please choose a valid future date.';
     static EVENT_DELETION_SUCCESSFUL = 'Event deleted successfully!';
     static EVENT_NOT_FOUND = 'The event you tried to delete does not exist.';
+    static USER_BLOCKED = 'User blocked!';
+    static USER_UNBLOCKED = 'User unblocked!';
+    static USER_ALREADY_BLOCKED = 'User already blocked.';
+    static USER_NOT_BLOCKED = 'User is not blocked.';
+    static CANNOT_LIKE_BLOCKED_USER = 'Cannot like a blocked user.';
 }
