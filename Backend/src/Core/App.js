@@ -19,6 +19,7 @@ import LikesRouter from '../Routes/LikesRouter.js';
 import MatchesRouter from '../Routes/MatchesRouter.js';
 import EventsRouter from '../Routes/EventsRouter.js';
 import BrowserRouter from '../Routes/BrowserRouter.js';
+import DistanceRouter from '../Routes/DistanceRouter.js';
 
 export default class App {
     constructor() {
@@ -76,6 +77,10 @@ export default class App {
         this.app.use(
             `${this.API_PREFIX}/matches`,
             MatchesRouter.createRouter()
+        );
+        this.app.use(
+            `${this.API_PREFIX}/distance`,
+            DistanceRouter.createRouter()
         );
     }
 }
