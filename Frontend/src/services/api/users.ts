@@ -37,4 +37,25 @@ export const usersApi = {
 		});
 		return response;
 	},
+
+	getMatches: async () => {
+		const response = await apiRequest(`matches`);
+		return response;
+	},
+
+	getUsersDistance: async (locationOne, locationTwo) => {
+		const response = await apiRequest(`distance/calculate`, {
+			method: "POST",
+			body: JSON.stringify({
+				locationOne,
+				locationTwo,
+			}),
+		});
+		return response;
+	},
+
+	getBrowseUsers: async () => {
+		const response = await apiRequest(`browser`);
+		return response;
+	},
 };

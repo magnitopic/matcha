@@ -3,10 +3,11 @@ import FormInput from "../../components/common/FormInput";
 import FormSelect from "../../components/common/FormSelect";
 import { EditProfileData } from "../../services/api/profile";
 import { useTags } from "../../hooks/PageData/useTags";
-import AgeDisplay from "../../components/common/AgeDisplay";
+import calculateAge from "../../utils/calculateAge";
 import Spinner from "../../components/common/Spinner";
 import Tag from "../../components/common/Tag";
-import TagSection from "./TagSection";
+import TagSection from "../../components/common/TagSection";
+import RegularButton from "../../components/common/RegularButton";
 
 interface BodyProps {
 	user: EditProfileData;
@@ -80,19 +81,10 @@ const Body = ({ user, onChange, onSelectChange }: BodyProps) => {
 					/>
 					{user.age != 0 && (
 						<p className="text-sm text-gray-600 mt-1">
-							Age: <AgeDisplay birthday={user.age} /> years old
+							Age: {calculateAge(user.age)} years old
 						</p>
 					)}
 				</div>
-				<div>
-					<label htmlFor="location">Location</label>
-					<FormInput
-						name="location"
-						value={user.location || ""}
-						onChange={onChange}
-					/>
-				</div>
-
 				<div>
 					<label htmlFor="gender">Your Gender</label>
 					<FormSelect
@@ -105,7 +97,6 @@ const Body = ({ user, onChange, onSelectChange }: BodyProps) => {
 						onChange={onSelectChange}
 					/>
 				</div>
-
 				<div>
 					<label htmlFor="sexual_preference">
 						Your Sexual Preference
