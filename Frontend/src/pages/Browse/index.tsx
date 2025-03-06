@@ -107,10 +107,10 @@ const index = () => {
 			}
 
 			return order === "asc"
-				? compareA > compareB
+				? compareA < compareB
 					? 1
 					: -1
-				: compareA < compareB
+				: compareA > compareB
 				? 1
 				: -1;
 		});
@@ -187,7 +187,12 @@ const index = () => {
 	}, [profile]);
 
 	if (loading) return <Spinner />;
-	if (error) return <div>An error occurred when loading the browse page</div>;
+	if (error)
+		return (
+			<main className="flex flex-1 justify-center items-center flex-col">
+				<div>An error occurred when loading the browse page</div>
+			</main>
+		);
 	if (!user || !profile) return <div>Error: User not found</div>;
 
 	return (
