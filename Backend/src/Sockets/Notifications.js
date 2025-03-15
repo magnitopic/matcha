@@ -1,5 +1,6 @@
 // Local Imports:
 import blockedUsersModel from '../Models/BlockedUsersModel.js';
+import dislikesModel from '../Models/DislikesModel.js';
 import notificationsModel from '../Models/NotificationsModel.js';
 import userModel from '../Models/UserModel.js';
 import userStatusModel from '../Models/UserStatusModel.js';
@@ -22,6 +23,13 @@ export default class Notifications {
             notifierId
         );
         if (isUserBlocked) return null;
+
+        const isUserDisliked = await dislikesModel.isUserDisliked(
+            recipientId,
+            notifierId
+        );
+        if (isUserDisliked) return null;
+
         const recipientInfo = await this.#getUserInfo(recipientId, 'status');
         if (!recipientInfo) return null;
         const notifierInfo = await this.#getUserInfo(notifierId, 'full');
